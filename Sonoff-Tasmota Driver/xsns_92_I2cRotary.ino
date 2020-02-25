@@ -1,6 +1,8 @@
 #ifdef USE_I2C
 #ifdef USE_I2C_ROTARY
 
+#define XSNS_92 92
+#define XI2C_95              95  // See I2CDEVICES.md
 #define I2C_ROTARY_ADDRESS            0x77
 
 #define I2C_ROTARY_SIGNATURE          0x67
@@ -48,11 +50,11 @@ void I2cRotary_Report_Value(void) {
  * Interface
 \*********************************************************************************************/
 
-#define XSNS_91
 
-boolean Xsns91(byte function)
+
+bool Xsns92(uint8_t function)
 {
-  boolean result = false;
+  bool result = false;
 
   if (i2c_flg) {
     switch (function) {
